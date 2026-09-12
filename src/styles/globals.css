@@ -1,0 +1,70 @@
+@import './theme.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-bg text-text font-sans antialiased;
+  }
+  ::selection {
+    @apply bg-accent/30 text-text;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight text-text;
+    text-wrap: balance;
+  }
+  p { text-wrap: pretty; }
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent/70 ring-offset-2 ring-offset-bg rounded;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-mono text-[0.7rem] uppercase tracking-[0.22em] text-accent;
+  }
+  .card {
+    @apply rounded-lg border border-border bg-surface shadow-card;
+  }
+  .card-hover {
+    @apply transition duration-300 ease-swift hover:-translate-y-0.5 hover:border-border-strong hover:shadow-glow;
+  }
+  .prose-muted {
+    @apply text-text-muted leading-relaxed;
+  }
+  .grid-bg {
+    background-image:
+      linear-gradient(rgb(var(--c-border) / 0.35) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--c-border) / 0.35) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse at top, black 30%, transparent 75%);
+  }
+  .gold-text {
+    background: linear-gradient(120deg, rgb(var(--c-accent-2)), rgb(var(--c-accent)) 55%, rgb(var(--c-accent-2)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  .mask-fade-x {
+    mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+  }
+}

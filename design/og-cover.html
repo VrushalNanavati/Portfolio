@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; background: #0c0f18; }
+  .stage { position: relative; width: 1200px; height: 630px; overflow: hidden; font-family: 'DM Sans', sans-serif; color: #eceff5;
+    background: radial-gradient(ellipse 900px 600px at 78% 35%, rgba(201,169,97,0.14), transparent 60%),
+                linear-gradient(160deg, #0f1320 0%, #0c0f18 55%, #0a0d15 100%); }
+  .grid { position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(63,74,102,0.28) 1px, transparent 1px), linear-gradient(90deg, rgba(63,74,102,0.28) 1px, transparent 1px);
+    background-size: 42px 42px;
+    -webkit-mask-image: radial-gradient(ellipse at 30% 35%, black 20%, transparent 80%); mask-image: radial-gradient(ellipse at 30% 35%, black 20%, transparent 80%); }
+  .art { position: absolute; right: 0; top: 0; width: 640px; height: 630px; }
+  .shade { position: absolute; left: 0; right: 0; bottom: 0; height: 250px;
+    background: linear-gradient(180deg, rgba(12,15,24,0) 0%, rgba(12,15,24,0.82) 40%, rgba(12,15,24,0.96) 100%); }
+
+  .rule { position: absolute; left: 72px; top: 56px; width: 56px; height: 3px; background: #c9a961; border-radius: 2px; }
+  .copy { position: absolute; left: 72px; top: 80px; width: 580px; }
+  .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 14px; letter-spacing: 0.24em; color: #c9a961; text-transform: uppercase; }
+  .name { margin-top: 18px; font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 66px; line-height: 0.95; letter-spacing: -0.01em; white-space: nowrap; }
+  .name .gold { background: linear-gradient(120deg, #e8cd8e, #c9a961 55%, #e8cd8e); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .tag { margin-top: 20px; font-size: 21px; line-height: 1.4; color: #aab3c7; max-width: 560px; }
+  .tag b { color: #eceff5; font-weight: 500; }
+
+  .cols { position: absolute; left: 72px; right: 56px; bottom: 52px; display: grid; grid-template-columns: 1.05fr 1.15fr 1fr; gap: 28px; }
+  .col { border-top: 1px solid rgba(201,169,97,0.35); padding-top: 14px; }
+  .col h4 { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.22em; color: #c9a961; text-transform: uppercase; font-weight: 500; }
+  .col ul { list-style: none; margin-top: 10px; }
+  .col li { font-size: 15px; line-height: 1.5; color: #d5dae6; position: relative; padding-left: 14px; }
+  .col li::before { content: ''; position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: #c9a961; }
+  .col li b { color: #eceff5; font-weight: 600; }
+  .url { position: absolute; right: 56px; top: 60px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #747e96; letter-spacing: 0.06em; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="grid"></div>
+
+  <svg class="art" viewBox="0 0 640 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#c9a961" stop-opacity="0"/>
+        <stop offset="0.35" stop-color="#c9a961" stop-opacity="0.55"/>
+        <stop offset="1" stop-color="#e8cd8e" stop-opacity="0.95"/>
+      </linearGradient>
+      <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+        <stop offset="0" stop-color="#e8cd8e" stop-opacity="0.9"/>
+        <stop offset="1" stop-color="#e8cd8e" stop-opacity="0"/>
+      </radialGradient>
+      <filter id="blur"><feGaussianBlur stdDeviation="6"/></filter>
+    </defs>
+
+    <!-- ground plane (isometric) -->
+    <g stroke="url(#fade)" stroke-width="1.2" opacity="0.7" transform="translate(0,-18)">
+      <path d="M120 470 L400 610 L640 490 L360 350 Z"/>
+      <path d="M190 435 L470 575"/><path d="M260 400 L540 540"/><path d="M330 365 L610 505"/>
+      <path d="M190 505 L430 385"/><path d="M260 540 L500 420"/><path d="M330 575 L570 455"/>
+    </g>
+
+    <g transform="translate(0,-18)">
+    <!-- tower: three stacked isometric boxes -->
+    <g stroke="#c9a961" stroke-width="1.6" stroke-linejoin="round">
+      <path d="M260 420 L400 490 L520 430 L380 360 Z" opacity="0.9"/>
+      <path d="M260 420 L260 300 L400 370 L400 490" opacity="0.9"/>
+      <path d="M520 430 L520 310 L400 370" opacity="0.9"/>
+      <path d="M260 300 L380 240 L520 310" opacity="0.9"/>
+      <path d="M380 240 L380 360" opacity="0.5"/>
+      <path d="M310 300 L390 340 L470 300" opacity="0.85"/>
+      <path d="M310 300 L310 210 L390 250 L390 340" opacity="0.85"/>
+      <path d="M470 300 L470 210 L390 250" opacity="0.85"/>
+      <path d="M310 210 L390 170 L470 210" opacity="0.85"/>
+      <path d="M345 210 L390 232 L435 210" opacity="0.8"/>
+      <path d="M345 210 L345 150 L390 172 L390 232" opacity="0.8"/>
+      <path d="M435 210 L435 150 L390 172" opacity="0.8"/>
+      <path d="M345 150 L390 128 L435 150" opacity="0.8"/>
+      <path d="M260 360 L400 430 L520 370" opacity="0.35"/>
+      <path d="M310 255 L390 295 L470 255" opacity="0.35"/>
+      <g opacity="0.35">
+        <path d="M290 315 L290 435"/><path d="M320 330 L320 450"/><path d="M350 345 L350 465"/>
+        <path d="M430 355 L430 475"/><path d="M460 340 L460 460"/><path d="M490 325 L490 445"/>
+      </g>
+    </g>
+
+    <!-- agent / data graph around the structure -->
+    <g stroke="#e8cd8e" stroke-width="1.2" opacity="0.75">
+      <path d="M390 128 L330 62"/><path d="M390 128 L470 56"/><path d="M470 56 L560 92"/>
+      <path d="M560 92 L590 182"/><path d="M590 182 L520 310"/><path d="M330 62 L220 112"/>
+      <path d="M220 112 L260 300"/><path d="M220 112 L150 192"/><path d="M150 192 L260 300"/>
+      <path d="M330 62 L250 44" stroke-dasharray="4 5"/>
+      <path d="M560 92 L620 262" stroke-dasharray="4 5"/><path d="M620 262 L520 310" stroke-dasharray="4 5"/>
+      <path d="M150 192 L80 282" stroke-dasharray="4 5"/><path d="M80 282 L260 420" stroke-dasharray="4 5"/>
+      <path d="M470 56 L600 40" stroke-dasharray="4 5"/>
+    </g>
+    <g>
+      <circle cx="330" cy="62" r="22" fill="url(#glow)" filter="url(#blur)"/>
+      <circle cx="470" cy="56" r="22" fill="url(#glow)" filter="url(#blur)"/>
+      <circle cx="590" cy="182" r="18" fill="url(#glow)" filter="url(#blur)"/>
+      <circle cx="150" cy="192" r="18" fill="url(#glow)" filter="url(#blur)"/>
+    </g>
+    <g fill="#0c0f18" stroke="#e8cd8e" stroke-width="1.6">
+      <circle cx="330" cy="62" r="7"/><circle cx="470" cy="56" r="7"/><circle cx="560" cy="92" r="5"/>
+      <circle cx="590" cy="182" r="6"/><circle cx="220" cy="112" r="5"/><circle cx="150" cy="192" r="6"/>
+      <circle cx="620" cy="262" r="4"/><circle cx="80" cy="282" r="4"/><circle cx="250" cy="44" r="4"/><circle cx="600" cy="40" r="4"/>
+    </g>
+    <g fill="#e8cd8e">
+      <circle cx="330" cy="62" r="2.5"/><circle cx="470" cy="56" r="2.5"/><circle cx="590" cy="182" r="2.5"/><circle cx="150" cy="192" r="2.5"/>
+    </g>
+
+    <!-- node labels: the vocabulary of the practice -->
+    <g font-family="JetBrains Mono, monospace" font-size="10" fill="#aab3c7" letter-spacing="0.12em">
+      <text x="318" y="30">MCP</text>
+      <text x="458" y="34" text-anchor="end">AI AGENTS</text>
+      <text x="636" y="62" text-anchor="end">AUTOMATION</text>
+      <text x="582" y="212" text-anchor="end">ACC · FORMA</text>
+      <text x="632" y="284" text-anchor="end">DIGITAL TWIN · IoT</text>
+      <text x="96" y="182">BIM · IFC</text>
+      <text x="40" y="316">REVIT · INVENTOR · 3DS MAX</text>
+      <text x="238" y="32" text-anchor="end">MANUFACTURING · PLM</text>
+      <text x="212" y="100" text-anchor="end">CAD · GEOMETRY</text>
+    </g>
+    </g>
+  </svg>
+
+  <div class="shade"></div>
+
+  <div class="rule"></div>
+  <div class="copy">
+    <div class="eyebrow">Independent technical consultant</div>
+    <div class="name">Vrushal <span class="gold">Nanavati</span></div>
+    <div class="tag">Ten years turning <b>AEC, BIM and manufacturing</b> software problems into shipped products, now with <b>AI agents and MCP</b> on construction data.</div>
+  </div>
+
+  <div class="cols">
+    <div class="col">
+      <h4>Expertise</h4>
+      <ul>
+        <li>AEC · BIM · Digital Twin</li>
+        <li>CAD plugins &amp; 3D web viewers</li>
+        <li>Manufacturing &amp; PLM software</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4>How I help</h4>
+      <ul>
+        <li>AI agents &amp; MCP on ACC, Forma, Procore</li>
+        <li>Product architecture &amp; feasibility POCs</li>
+        <li>Fractional tech &amp; delivery leadership</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4>Track record</h4>
+      <ul>
+        <li><b>50+</b> one-line briefs → products</li>
+        <li><b>$2.5M</b> P&amp;L · <b>70</b>-engineer unit</li>
+        <li>Speaker, Autodesk University</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>

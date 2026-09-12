@@ -1,0 +1,107 @@
+import type { ExperienceEntry } from './types';
+
+/** Career timeline, newest first. */
+export const experience: ExperienceEntry[] = [
+  {
+    id: 'independent',
+    title: 'Independent Technical Consultant',
+    company: 'Self-employed',
+    location: 'Remote · India, North America, Europe',
+    start: '2025',
+    end: 'Present',
+    tag: 'Consulting',
+    summary:
+      'Advising a small number of organizations building software for the AEC, BIM and manufacturing domains on product strategy, architecture, AI adoption and delivery.',
+    highlights: [
+      'Currently engaged with three organizations across AEC, BIM and manufacturing software',
+      'Agentic AI on Autodesk Platform Services, ACC and Forma',
+      'Architecture reviews, feasibility sprints and fractional leadership',
+    ],
+    projects: ['acc-mcp-server', 'multi-agent-aec'],
+  },
+  {
+    id: 'bu-head',
+    title: 'Delivery Manager & Business Unit Head',
+    company: 'nCircle Tech Pvt. Ltd.',
+    location: 'Pune, India',
+    start: 'Oct 2022',
+    end: '2025',
+    tag: 'AEC / BIM / AI',
+    summary:
+      'Led the flagship AEC business unit: P&L, team growth, client relationships and technology strategy across the full delivery lifecycle. Primary contact for North America; travelled to Europe and South Korea for client work.',
+    highlights: [
+      'Scaled a 70-person unit delivering $2.5M annual revenue at ~60% gross margin',
+      'Drove AI adoption: GitHub Copilot unit-wide, AI checks in CI/CD, Claude-based agents and skills',
+      'Architected MCP servers on Autodesk Construction Cloud and Forma',
+      'Converted 50+ technical POCs into products and engagements, often from a one-line customer requirement',
+      'Managed all five BU support functions: recruitment, training, execution, pre-sales, finance',
+      'Established a "replace yourself" learning culture that reduced ramp-up time and attrition impact',
+      'Presented BU strategy, client roadmaps and performance to the company board',
+    ],
+    projects: ['addodle-cbim', 'invicara-digital-twin', 'ai-cicd', 'acc-mcp-server'],
+  },
+  {
+    id: 'atm',
+    title: 'Associate Technical Manager',
+    company: 'nCircle Tech Pvt. Ltd.',
+    location: 'Pune, India',
+    start: 'Apr 2020',
+    end: 'Oct 2022',
+    tag: 'Delivery',
+    summary:
+      'Managed cross-functional delivery across multiple concurrent AEC/CAD projects: hiring, architecture decisions, delivery governance and client communication.',
+    highlights: [
+      'On-time, on-budget delivery across concurrent ODC projects with teams up to 25',
+      'Introduced structured sprint reviews and milestone governance',
+      'Delegated architecture ownership to senior developers; set code quality standards',
+      'Contributed to pre-sales technical assessments and RFP responses',
+    ],
+    projects: ['addodle-cbim', 'invicara-digital-twin'],
+  },
+  {
+    id: 'tech-lead',
+    title: 'Tech Lead',
+    company: 'nCircle Tech Pvt. Ltd.',
+    location: 'Pune, India',
+    start: 'Jan 2020',
+    end: 'Apr 2020',
+    tag: 'Engineering',
+    summary: 'Led technical delivery on GIS visualisation and Autodesk plugin projects for US clients.',
+    highlights: [
+      'Rocket flight simulation visualizer with DEM terrain for Apogee Components',
+      'Autodesk internal R&D Inventor plugin for BIM assembly publishing',
+    ],
+    projects: ['rocket-visualizer', 'autodesk-inventor-plugin'],
+  },
+  {
+    id: 'senior-dev',
+    title: 'Senior Software Developer',
+    company: 'ProtoTech Solutions',
+    location: 'Pune, India',
+    start: 'Jun 2018',
+    end: 'Dec 2019',
+    tag: 'Engineering',
+    summary: 'Sole developer on rendering and simulation plugins for NextLimit Technologies (RealFlow, Maxwell).',
+    highlights: [
+      'RealFlow fluid simulation integration into 3ds Max, end to end',
+      'Maxwell renderer enhancements across 3ds Max and Maya',
+    ],
+    projects: ['realflow-3dsmax', 'maxwell-renderer'],
+  },
+  {
+    id: 'mts',
+    title: 'Member of Technical Staff',
+    company: 'ProtoTech Solutions',
+    location: 'Pune, India',
+    start: 'Jun 2016',
+    end: 'Jun 2018',
+    tag: 'Engineering',
+    summary: '3D web viewer features, computational geometry and AutoCAD plugin development for clients in Germany, the US and Greece.',
+    highlights: [
+      'Solo developer on Hoops Communicator viewer features for Contact Software',
+      'CGAL/VTK Boolean mesh operations for part serialising (Authentise)',
+      'Graph-based closed-profile detection over 10M+ AutoCAD elements (CCC)',
+    ],
+    projects: ['hoops-web-viewer', 'part-serializing-autocad'],
+  },
+];

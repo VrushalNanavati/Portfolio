@@ -1,0 +1,66 @@
+/* =====================================================================
+   CENTRAL THEME. Edit this file to re-skin the whole site.
+   ---------------------------------------------------------------------
+   Colours are RGB channel triplets ("201 169 97", not "#c9a961") so that
+   Tailwind can apply opacity modifiers such as `bg-accent/10`.
+   Dark is the default look (matches the resume). Light mode overrides
+   only the colour tokens; spacing/typography tokens are shared.
+   ===================================================================== */
+
+:root {
+  /* ---- Typography ---- */
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans: 'DM Sans', Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  /* ---- Shape & layout ---- */
+  --radius: 0.5rem;
+  --radius-lg: 0.875rem;
+  --radius-xl: 1.25rem;
+  --content-width: 72rem;
+  --marquee-duration: 45s;
+
+  /* ---- Dark palette (default) ---- */
+  --c-bg: 12 15 24;             /* page background            #0c0f18 */
+  --c-bg-elevated: 17 21 33;    /* header / footer band       #111521 */
+  --c-surface: 22 27 41;        /* cards                      #161b29 */
+  --c-surface-2: 29 35 52;      /* nested cards / hover       #1d2334 */
+  --c-border: 42 50 71;         /* hairlines                  #2a3247 */
+  --c-border-strong: 63 74 102; /* emphasised borders         #3f4a66 */
+  --c-text: 236 239 245;        /* primary text               #eceff5 */
+  --c-text-muted: 170 179 199;  /* secondary text             #aab3c7 */
+  --c-text-subtle: 116 126 150; /* captions / labels          #747e96 */
+  --c-accent: 201 169 97;       /* gold                       #c9a961 */
+  --c-accent-2: 232 205 142;    /* lighter gold for gradients #e8cd8e */
+  --c-on-accent: 20 20 26;      /* text placed on gold        #14141a */
+  --c-success: 94 200 150;
+  --c-info: 96 165 250;
+
+  --shadow-card: 0 1px 0 rgb(255 255 255 / 0.03) inset, 0 10px 30px -12px rgb(0 0 0 / 0.55);
+  --shadow-glow: 0 0 0 1px rgb(var(--c-accent) / 0.35), 0 12px 40px -12px rgb(var(--c-accent) / 0.35);
+
+  color-scheme: dark;
+}
+
+/* ---- Light palette ---- */
+:root[data-theme='light'] {
+  --c-bg: 249 247 242;          /* warm off-white  #f9f7f2 */
+  --c-bg-elevated: 255 255 255;
+  --c-surface: 255 255 255;
+  --c-surface-2: 243 239 230;
+  --c-border: 228 222 209;
+  --c-border-strong: 200 190 170;
+  --c-text: 24 27 36;
+  --c-text-muted: 84 91 108;
+  --c-text-subtle: 128 135 152;
+  --c-accent: 158 121 44;       /* deeper gold for contrast on light */
+  --c-accent-2: 201 169 97;
+  --c-on-accent: 255 255 255;
+  --c-success: 22 140 90;
+  --c-info: 37 99 235;
+
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.04), 0 10px 30px -14px rgb(30 24 10 / 0.18);
+  --shadow-glow: 0 0 0 1px rgb(var(--c-accent) / 0.3), 0 12px 36px -14px rgb(var(--c-accent) / 0.35);
+
+  color-scheme: light;
+}
