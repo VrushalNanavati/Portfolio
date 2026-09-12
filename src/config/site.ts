@@ -12,7 +12,7 @@ export const site = {
   role: 'Independent Consultant · AEC · BIM · Digital Twin · AI',
   /** Used in <title> suffix and the footer. */
   tagline: 'Technical consulting for AEC, BIM and manufacturing software products.',
-  url: 'https://vrushalnanavati.github.io',
+  url: 'https://vrushalnanavati.github.io/Portfolio/',
   location: 'Pune, Maharashtra, India · Working with clients in North America & Europe',
   timezone: 'IST (UTC+5:30)',
   email: 'vrushalnanavati73@gmail.com',
